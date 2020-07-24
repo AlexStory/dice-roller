@@ -5,10 +5,21 @@ export class Dice {
     this.sides = sides;
   }
 
-  roll(): number {
+  roll(): number  {
+    return this._getRoll();
+  }
+
+  rolls(n: number): number[] {
+    if (n <= 0) {
+      throw new Error("Value must be 1 or greater");
+    }
+    return Array(n).fill(0).map(_ => this._getRoll());
+  }
+  _getRoll(): number {
     let n = Math.random();
     return Math.floor(n * this.sides) + 1;
   }
+
 }
 
 export const d4 = () => new Dice(4);

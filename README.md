@@ -19,15 +19,14 @@ console.log(result);
 
 Class to create a custom n-sided die with `new Dice(n)`
 
-There are also shorthands for the followind dice: d4, d6, d8, d10, d12, d20, d100
+There are also shorthands for the following dice: d4, d6, d8, d10, d12, d20, d100
 
 They can be used as follows:
 ```ts
-import { d6 } from 'https://github.com/alexstory/dice-roller/mod.ts';
+import { d6 } from 'https://denopkg.com/alexstory/dice-roller/mod.ts';
 
 const die = d6();
 const roll = die.roll();
 console.log(roll);
-
 ```
 

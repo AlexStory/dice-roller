@@ -25,3 +25,9 @@ Deno.test("can use d4 shorthand", () => {
     const roll = die.roll();
     assert(roll <= 4 && roll > 0);
 })
+
+Deno.test("can roll multiple dice", () => {
+    const die = d6();
+    const rolls = die.rolls(2);
+    assert(rolls.length == 2)
+})
