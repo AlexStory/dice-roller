@@ -1,4 +1,4 @@
-import { assert } from "https://deno.land/std@0.61.0/testing/asserts.ts";
+import { assert, assertThrows } from "https://deno.land/std@0.61.0/testing/asserts.ts";
 import { 
     Dice,
     d4,
@@ -30,4 +30,18 @@ Deno.test("can roll multiple dice", () => {
     const die = d6();
     const rolls = die.rolls(2);
     assert(rolls.length == 2)
+})
+
+Deno.test("trying to roll no dice throws error", () => {
+    const die = d8();
+    assertThrows(() => {
+        die.rolls(0);
+    })
+})
+
+Deno.test("trying to roll a negative number of dice throws an error",  () => {
+    const die = d10();
+    assertThrows(() => {
+        die.rolls(-1);
+    })
 })

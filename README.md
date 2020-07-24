@@ -30,3 +30,11 @@ const roll = die.roll();
 console.log(roll);
 ```
 
+## Methods
+
+#### `roll(): number`
+returns a number between 1 and the die size(inclusive).
+
+#### `rolls(n: number): number[]`
+returns an Array of N numbers between 1 and the die size(inclusive).
+
